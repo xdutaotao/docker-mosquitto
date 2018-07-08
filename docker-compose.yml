@@ -21,14 +21,10 @@ services:
                 environment:
                 - DOMAIN=example.local
                 - PORT=8080
-                networks:
-                - mosqnet
                 depends_on:
                 - redis
                 labels:
                 - "local.example.description=Mosquitto v1.5 MQTT server"
-#                links:
-#                - redis:mosquitto.redis.link
+                links:
+                - redis
 
-networks:
-        mosqnet:
